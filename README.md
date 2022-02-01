@@ -1,34 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. page 안에는 export default로 컴포넌트를 선언해야 한다.
+2. 앱에 있는 페이지들이 미리 렌더링 된다.
+3. 인터넷이 느린 클라이언트 경의 빈 div -> 자바스크립트가 가져와야지 가져올 수 있음 그러므로 인터넷이 느리면 클라이언트 사이드 렌더링 브라우저는 빈 div를 가져오고, 브라우저가 자바스크립트, react 등 모든 것을 fetch한 후에야 UI가 보인다.
+4. next js로 구성되면 어떠한 HTML은 볼 수 있다. 로고, 검색창 등을 볼 수 있다.
+5. 하지만 csr은 흰색페이지로 아무것도 볼 수 없었다. 모든게 페치 되어야 ui가 보임.
+6. next js는 pre-rendering을 하기 때문에 초기 값 상태로 처음에 보여진다.
+7. HTML이 보이고 -> react js가 클라이언트로 전송됐을때, 이게 react js앱이 된다.
+8. react.js 를 프론트엔드 안에서 실행하는 것을 hydration이라고 부른다.
+9. next.js는 react.js를 백엔드에서 동작시켜서 이 페이지를 미리 만드는데, 이것들이 컴포넌트를 렌더시키고, 렌더링이 끝나면 html이되고, next js는 html을 소스코드에 넣어준다. 유저는 자바스크립트와 react js가 로딩되지 않더라도 콘텐츠를 볼 수 있게 된다. react.js가 로딩되었을때, 기본적으로 이미 존재하는 것들과 연결이 되어서, 일반적인 react.js가 된다.
+10. 유조거 웹사이트에 가면, 초기 상태의 컴포넌트로 된 미리 생성된 HTML페이지를 보게 된다.
+    그리고 상호작용이 발생하면 react.js는 그걸 받아서 아주 잘 동작하게 된다.
+11. 자바스크립트가 비활상되면 적어도 유저들의 초기값으로 되어 있는 것들은 보임.
+    \
