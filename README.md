@@ -11,3 +11,7 @@
     그리고 상호작용이 발생하면 react.js는 그걸 받아서 아주 잘 동작하게 된다.
 11. 자바스크립트가 비활상되면 적어도 유저들의 초기값으로 되어 있는 것들은 보임.
 12. 리로딩 하지 않기 위해서 라우팅은 Link로 둘러싸여야 한다.
+13. App Component Next js 어떤 컴포넌트의 일종의 청사진이다.
+14. \_app.js는 다른 컴포넌트들이 렌더되기 전에 렌더되며, 커스텀마이징하기 위해서는 \_app.js파일이 필요하다.
+15. <Component {...pageProps} /> Component는 렌더링하길 원하는 페이지를 넣고, 해당하는 props를 넣어줌.
+16. getServerSidePorps 오직 백엔드에서 실행될 것임. export async function getServerSidProps(){}. api가 완료 되면 화면을 보여줄때 사용됨. 그래서 로딩이 없음. next js props들을 넣어주고, 이를 react js가 사용할 수 있다. 서버사이드 렌더링만을 할때 필요.
